@@ -11,9 +11,9 @@ const io = require('socket.io')(http, {
 io.on('connection', (socket)=> {
     console.log('Nuevo usuario conectado');
 
-    socket.on("test", (objeto) => {
-        console.log("Escucha TEST con texto: " + objeto.text)
-        socket.emit("test2", objeto);
+    socket.on("sendMessage", (messageInfo) => {
+        console.log("Enviando un mensaje" );
+        socket.broadcast.emit("receiveMessage", messageInfo);
     });
 });
 

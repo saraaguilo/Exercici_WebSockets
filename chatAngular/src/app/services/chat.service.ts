@@ -2,15 +2,11 @@ import { Injectable } from '@angular/core';
 import { SocketService } from './socket.service';
 
 
-
-
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  chats=[];
+  chats: any[]=[];
   constructor(private socket:SocketService) { 
     this.onReceiveMessage();
   }
@@ -22,7 +18,9 @@ export class ChatService {
   }
   onReceiveMessage(){
     this.socket.io.on("receiveMessage", (messageInfo)=>{
+      messageInfo.messageType=2;
       this.chats.push(messageInfo);  
+      //alert("Recibido");
 
     });
   }

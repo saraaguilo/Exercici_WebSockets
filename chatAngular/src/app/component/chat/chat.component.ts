@@ -1,17 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatService } from '../../services/chat.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './chat.component.html',
-  styleUrl: './chat.component.css'
+  styleUrls: ['./chat.component.css'] // Cambiado de styleUrl a styleUrls
 })
+
 export class ChatComponent implements OnInit{
-  constructor(private chat:ChatService){}
+//[x: string]: any;
+  text = '';
+  constructor(public chat:ChatService){}
     ngOnInit(): void{}
+    sendMessage(){
+      let messageInfo = {
+        text: this.text,
+        messageType: 1
+      };
+      this.chat.sendMessage(messageInfo);
+      this.text = "";
     }
+}
+  
 
 

@@ -1,0 +1,61 @@
+/* Estilos del mensaje local */
+.local {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    align-self: flex-start; /* Alinea el mensaje local a la izquierda */
+  }
+  
+  /* Estilos del mensaje remoto */
+  .remoto {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    align-self: flex-end; /* Alinea el mensaje remoto a la derecha */
+  }
+  
+  /* Contenedor del chat */
+  .chatContainer {
+    max-width: 400px;
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ajustes adicionales para hacerlo más atractivo */
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilo del botón (opcional) */
+  button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  /* Estilo del input */
+  input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
